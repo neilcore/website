@@ -30,3 +30,17 @@ class Album(models.Model):
     class Meta:
         verbose_name = 'Albums'
         verbose_name_plural = 'Albums'
+
+
+class Videos(models.Model):
+    title = models.CharField(max_length=30)
+    content = models.TextField(null=True, blank=True)
+    url = models.CharField(max_length=50)
+    date_posted = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.title} - video'
+
+    class Meta:
+        verbose_name = 'Video'
+        verbose_name_plural = 'Videos'
