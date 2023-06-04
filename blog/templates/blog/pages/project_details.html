@@ -1,0 +1,37 @@
+{% include 'blog/layouts/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container marketing" id="by-section">
+    <h2 class="featurette-heading text-center mb-5">{{ object.title }}</span></h2>
+    <div id="project-detail-section">
+        <img src="{{ object.image.url }}" class="img-fluid rounded-1 mb-2 mx-auto d-block border border-5 border-dark rounded" alt="...">
+        <p class="lead">
+            By: {{ object.user.first_name }} {{ object.user.last_name }}
+        </p>
+        <p class="lead">
+            Tech: {{ object.tech_used }}
+        </p>
+        <p class="lead">
+            Date Posted: {{ object.date_posted|date:"M d, Y" }}
+        </p>
+        <p class="lead">
+            Repository: <a href="#" class="stretched-link">{{ object.repo }}</a>
+        </p>
+        <p class="lead">
+            {{ object.content }}
+        </p>
+
+        <p>More Images</p>
+        <div id="project-albums">
+            {% if albums %}
+                {% for album in albums %}
+                    <img src="{{ album.photos.url }}" class="img-thumbnail" alt="..." height="200" width="200">
+                {% endfor %}
+            {% else %}
+                <p class="lead">No Albums</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

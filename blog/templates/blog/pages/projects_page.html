@@ -1,0 +1,26 @@
+{% include 'blog/layouts/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container marketing" id="by-section">
+    <h2 class="featurette-heading text-center mb-3">Projects</span></h2>
+    <hr class="featurette-divider">
+    <div id="project-section">
+        {% for project in projects %}
+            <div class="d-flex justify-content-between">
+                <p>{{ project.title }} | {{ project.tech_used }}</p>
+                <p>{{ project.date_posted }}</p>
+            </div>
+            <img src="{{ project.image.url }}" class="img-fluid rounded-1 mb-2 mx-auto d-block">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-5">
+              <a class="btn btn-secondary me-md-2 mr-2 btn-sm text-light" role="button" disabled href="{% url 'blog:project-info' project.id %}">
+                  View
+              </a>
+              <a class="btn btn-dark btn-sm text-light" role="button" disable title="Unavailable" href="{{ project.repo|default:'#' }}">
+                  Github
+              </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

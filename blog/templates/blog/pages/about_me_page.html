@@ -1,0 +1,40 @@
+{% include 'blog/layouts/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container marketing" id="by-section">
+    <h2 class="featurette-heading text-center mb-3 fs-5">About Me</span></h2>
+    <hr class="featurette-divider">
+    <div id="about-me-section">
+        <div class="row">
+            <div class="col-lg-6">
+                <img class="featurette-image img-fluid rounded border border-5" src="{% static 'blog/images/mypic.jpg' %}" height="500" width="500" alt="My Picture">
+            </div>
+            <div class="col-lg-6">
+                <p class="h1 text-primary text-center">
+                    Software <span class="text-warning">Developer</span>
+                </p>
+                <p class="lead mb-2">
+                    Welcome to my website! I extend my heartfelt gratitude to each and every one of you for taking the time to visit.
+                    I'm Neil Brian Temblor, a dedicated software developer, and I'm thrilled to present to you a collection of my projects
+                    and works. Every element you see on this website is a testament to my passion for creating innovative solutions and
+                    my commitment to excellence in the world of software development. Thank you for being here, and I
+                    hope you enjoy exploring my portfolio.
+                </p>
+                <p class="lead" style="font-weight: bold;">Social Media Accounts</p>
+                <p class="lead">Facebook: <a href="#" class="stretched-link">https://www.facebook.com/Briancore22/</a></p>
+                <p class="lead">Instagram: <a href="#" class="stretched-link">https://www.instagram.com/briantemblor22/</a></p>
+                <p class="lead">Gmail: <a class="stretched-link text-primary">neilcore22@gmail.com</a></p>
+                <p class="lead">Github: <a href="#" class="stretched-link">https://github.com/neilcore</a></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <a class="btn btn-danger btn-sm text-light me-md-2" role="button">My Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
